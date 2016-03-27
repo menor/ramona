@@ -16,15 +16,39 @@
     this.cover = m.prop(data.cover);
   }
 
-  // the albums collection
+  // the albums collection, this needs to take an user id as an argument and\
+  // retrieve her saved albums from spotify
   ramona.AlbumList = Array;
 
-  // create an album by hand later we need to create this from an
-  // spotify id
-  var frankBlack = new ramona.Album({
-    spotifyId: "5Q8gM5SMBT2LAoZ5LzqAvH",
-    artist: "Frank Black",
-    title: "Frank Black",
-    cover: "https://i.scdn.co/image/b392026893317c09efcf42b49d7015d1972551fe"
-  });
+  // define the view-model
+  ramona.vm = {
+    init: function() {
+      // A running list of albums, later we pass the user id
+      ramona.vm.list = new ramona.AlbumList();
+
+      // adds an album to the list
+      ramona.vm.add = function(album) {
+        // we'd to check if the album is properly formatted if we are going
+        // to keep this, I doubt it so I'm not doing it for now
+        // Also it's probably better to handle it in the model
+        ramona.vm.list.push(new ramona.Album(album))
+      }
+    }
+  };
+
+//initialize our view-model
+ramona.vm.init();
+
+// create an album by hand later we need to create this from an
+// spotify id
+var frankBlackFirst = {
+  spotifyId: "5Q8gM5SMBT2LAoZ5LzqAvH",
+  artist: "Frank Black",
+  title: "Frank Black",
+  cover: "https://i.scdn.co/image/b392026893317c09efcf42b49d7015d1972551fe"
+};
+
+// add the album to the view-model list
+ramona.vm.add(frankBlackFirst);
+
 </script>
