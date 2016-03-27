@@ -36,19 +36,60 @@
     }
   };
 
-//initialize our view-model
-ramona.vm.init();
+  // Main view
+  ramona.view = function() {
+    return m("html",[
+      m("body", [
+        // this needs to be extracted to a function that goes through the album
+        // array and outputs the view for each album
+        ramona.renderAlbums()
+      ])
+    ]);
+  };
 
-// create an album by hand later we need to create this from an
-// spotify id
-var frankBlackFirst = {
-  spotifyId: "5Q8gM5SMBT2LAoZ5LzqAvH",
-  artist: "Frank Black",
-  title: "Frank Black",
-  cover: "https://i.scdn.co/image/b392026893317c09efcf42b49d7015d1972551fe"
-};
+  // we'll make this take an argument later to make it more flexible
+  ramona.renderAlbums = function() {
+    return ramona.vm.list.map(function(album) {
+      return ramona.renderAlbum(album);
+    })
+  };
 
-// add the album to the view-model list
-ramona.vm.add(frankBlackFirst);
+  ramona.renderAlbum = function(album) {
+    return m("div.album", [
+      m("img", {src: album.cover()}),
+      m("h1", album.artist()),
+      m("span", album.title()),
+    ])
+  };
+
+  //initialize our view-model
+  ramona.vm.init();
+
+  // create an album by hand later we need to create this from an
+  // spotify id
+  var frankBlackFirst = {
+    spotifyId: "5Q8gM5SMBT2LAoZ5LzqAvH",
+    artist: "Frank Black",
+    title: "Frank Black",
+    cover: "https://i.scdn.co/image/b392026893317c09efcf42b49d7015d1972551fe"
+  };
+
+  // another album just for fun
+  var roky = {
+    spotifyId: "625D7Framo0tCKlhdLKoE4",
+    artist: "Roky Erickson",
+    title: "The Evil One",
+    cover: "https://i.scdn.co/image/808159d472a9caa36ed649527b6745f9d029bc5c"
+  };
+
+  // add the album to the view-model list
+  ramona.vm.add(frankBlackFirst);
+
+  // render the view
+  m.render(document, ramona.view());
+
+  // add a second album, this works inmediately even with a timeout
+  // not essential so leaving it out for now
+  // ramona.vm.add(roky);
 
 </script>
