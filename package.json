@@ -12,5 +12,8 @@
     "app"
   ],
   "author": "Jose Menor <josemenor@gmail.com> (http://josemenor.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mithril": "^0.2.3"
+  }
 }
