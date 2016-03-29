@@ -27,6 +27,7 @@ if(TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devServer: {
       contentBase: PATHS.build,
+      devtool: 'eval-source-map',
 
       // Enable history API fallback so HTML5 History API based
       // routing works. This is a good default that will come
