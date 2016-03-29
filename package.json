@@ -2,8 +2,11 @@
   "name": "ramona",
   "version": "0.0.1",
   "description": "get your music the proper way",
+  "repository": "https://github.com/menor/ramona",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,5 +18,10 @@
   "license": "MIT",
   "dependencies": {
     "mithril": "^0.2.3"
+  },
+  "devDependencies": {
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.8.4"
   }
 }
