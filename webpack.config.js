@@ -6,7 +6,7 @@ const TARGET = process.env.npm_lifecycle_event;
 
 
 const PATHS = {
-  src: path.join(__dirname, 'src'),
+  src: path.join(__dirname, 'src', 'js'),
   build: path.join(__dirname, 'build')
 };
 
