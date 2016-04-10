@@ -16,6 +16,9 @@ const common = {
   entry: {
     src: PATHS.src
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   output: {
     path: PATHS.build,
     filename: 'app.js'
