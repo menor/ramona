@@ -1,13 +1,6 @@
 var m = require('mithril');
 
 // comment this for now until we have the routes built
-// m.route(document.body, "/", {
-//   "/": home,
-//   "/login": login
-// });
-
-// main component used to namespace the app
-var ramona = {};
 
 // the Album class
 ramona.Album = function(data) {

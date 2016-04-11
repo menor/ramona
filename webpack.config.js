@@ -6,7 +6,7 @@ const TARGET = process.env.npm_lifecycle_event;
 
 
 const PATHS = {
-  src: path.join(__dirname, 'src'),
+  src: path.join(__dirname, 'src', 'js'),
   build: path.join(__dirname, 'build')
 };
 
@@ -15,6 +15,9 @@ const common = {
   // latter form given it's convenient with more complex configurations.
   entry: {
     src: PATHS.src
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   },
   output: {
     path: PATHS.build,
@@ -27,6 +30,7 @@ if(TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devServer: {
       contentBase: PATHS.build,
+      devtool: 'eval-source-map',
 
       // Enable history API fallback so HTML5 History API based
       // routing works. This is a good default that will come
