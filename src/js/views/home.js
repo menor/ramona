@@ -3,6 +3,9 @@ var m = require('mithril');
 // Main view
 var Home = module.exports = {
 
+  // The controller here should detect if we have a spotify token for the user
+  // If we have it redirect to the albums list
+  // Else we redirect to the login button
   view: function(ctrl) {
     return m("html",[
       m("body", [
