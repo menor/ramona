@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 
 app.get('/', (req, res) => {
+  
   res.render('index');
 });
 
