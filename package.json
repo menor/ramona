@@ -7,6 +7,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
+    "startServer": "nodemon src/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,7 +18,11 @@
   "author": "Jose Menor <josemenor@gmail.com> (http://josemenor.com)",
   "license": "MIT",
   "dependencies": {
-    "mithril": "^0.2.3"
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mithril": "^0.2.3",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2"
   },
   "devDependencies": {
     "webpack": "^1.12.14",
