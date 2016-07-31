@@ -20,6 +20,8 @@
     "mithril": "^0.2.3"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^2.22.0",
+    "html-webpack-template": "^5.0.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.8.4"
