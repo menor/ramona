@@ -1,0 +1,32 @@
+.album-container {
+  width: 320px;
+  display: inline-block;
+  margin: 1rem;
+  height: 200px;
+}
+
+.album-cover {
+  width: 100%;
+}
+
+.album-artist {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  color: #555;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem
+}
+
+.album-title {
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #AAA;
+  margin-top: 0.5rem
+}
+
+.album-artist:hover,
+.album-title:hover {
+  text-decoration: underline;
+}
