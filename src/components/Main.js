@@ -1,14 +1,10 @@
 import React, { cloneElement } from 'react'
-import { Link } from 'react-router'
+import Header from './Header'
 
 const Main = (props) => (
   <div>
-    <header>
-      <h1>
-        <Link to='/'>Ramona</Link>
-        {cloneElement(props.children, props)}
-      </h1>
-    </header>
+    <Header props={props}/>
+    {cloneElement(props.children, props)}
   </div>
 )
 

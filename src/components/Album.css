@@ -1,26 +1,30 @@
 .album-container {
-  width: 320px;
+  width: 32em;
   display: inline-block;
-  margin: 1rem;
-  height: 200px;
+  margin: 2em;
+  padding-bottom: 20em;
+  height: 20em;
 }
 
 .album-cover {
   width: 100%;
+  padding-bottom: 1em;
 }
 
 .album-artist {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  line-height: 0.8;
   font-weight: 300;
-  line-height: 1.5rem;
   color: #555;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem
+  margin-top: 0.5em;
+  margin-bottom: 0.5em
 }
 
 .album-title {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
+  line-height: 1;
   font-weight: 300;
   color: #AAA;
   margin-top: 0.5rem

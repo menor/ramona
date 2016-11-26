@@ -6,12 +6,15 @@ import rootReducer from './reducers/index'
 
 import burger from './data/burger'
 
-const defaultState = {
-  albums: burger.albums
+const initialState = {
+  albums: burger.albums,
+  ui: {
+    searchExpanded: false
+  }
 }
 
 const store = createStore(
-  rootReducer, defaultState
+  rootReducer, initialState
 )
 
 export const history = syncHistoryWithStore(

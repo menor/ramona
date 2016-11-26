@@ -5,7 +5,8 @@ import Main from './Main'
 
 const mapStateToProps = (state) => {
   return {
-    albums: state.albums
+    albums: state.albums,
+    ui: state.ui
   }
 }
 

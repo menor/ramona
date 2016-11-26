@@ -1,5 +1,6 @@
 import React from 'react'
 import Album from './Album'
+import './AlbumGrid.css'
 
 const AlbumGrid = (props) => (
   <div className='album-grid'>
