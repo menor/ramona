@@ -12,6 +12,8 @@ const uiReducer = (state = initialState, action) => {
       })
 
     case 'UI_COLLAPSE_SEARCH':
+    case 'SEARCH_FOR_LABEL':
+    case 'ALBUMS_FETCH_SUCCESS':
       return Object.assign({}, state, {
         searchExpanded: false
       })

@@ -1,22 +1,28 @@
-import React from 'react'
-import './Album.css';
+import React, { Component } from 'react'
 
-const Album = ({album}) => (
-  <div className='album-container'>
-    <a href={album.href}>
-      <img className='album-cover' src={album.images[0].url} alt=''/>
-      <h2 className='album-artist'>
-        {
-          album.artists.length > 1
-            ? 'Various Artists'
-            : album.artists[0].name
+import './Album.css';
+import AlbumCard from './AlbumCard'
+import AlbumPlayer from './AlbumPlayer'
+
+class Album extends Component {
+  state = {
+    selected: false
+  }
+
+  onAlbumClicked = () => {
+    this.setState({selected: !this.state.selected})
+  }
+
+  render() {
+    return (
+      <div className='album-container'>
+        { this.state.selected
+          ? <AlbumPlayer album={this.props.album} />
+          : <AlbumCard album={this.props.album} onAlbumClicked={this.onAlbumClicked}/>
         }
-      </h2>
-      <h3 className='album-title'>
-        { album.name }
-      </h3>
-    </a>
-  </div>
-)
+      </div>
+    )
+  }
+}
 
 export default Album

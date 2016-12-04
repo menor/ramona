@@ -1,9 +1,11 @@
-export const searchLabel = (e) => {
-  return {
+export const searchLabel = (e) => (dispatch) => {
+  e.preventDefault()
+
+  dispatch ({
     type: 'SEARCH_FOR_LABEL',
     // this is horrible, maybe a controlled component would be better
     payload: e.target.children.label.value
-  }
+  })
 }
 
 export const updateLabelInput = (label) => {
