@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware } from 'redux'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { browserHistory }  from 'react-router'
+// Using hashHistory while I host on gh-pages because of this problem:
+// https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#notes-on-client-side-routing
+import { hashHistory }  from 'react-router'
 import thunk from 'redux-thunk'
 
 import rootReducer from './reducers/index'
@@ -22,7 +24,7 @@ const store = createStore(
 )
 
 export const history = syncHistoryWithStore(
-  browserHistory, store
+  hashHistory, store
 )
 
 export default store
